@@ -1,0 +1,217 @@
+/* #root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.overall-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+}
+
+.left-section {
+  width: 400px;
+  padding: 50px 50px;
+}
+
+.right-section {
+  position: relative;
+  width: 700px;
+  height: auto;
+}
+
+.australia-mask {
+  width: 100%;
+  aspect-ratio: 1.1; 
+  -webkit-mask-image: url('/fm.png'); 
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  -webkit-mask-position: center;
+  mask-image: url('/fm.png');
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  mask-position: center;
+  overflow: hidden;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  width: 100%;
+  height: 100%;
+}
+
+.image-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+} */
+/* Keep your existing .overall-content, .left-section styles */
+.overall-content {
+  display: flex;
+  /* justify-content: center; /* You might want space-around or space-between */
+  justify-content: center;
+  align-items: center;
+  color: black; /* Assuming your page background is light as in the example */
+  min-height: 100vh;
+  
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #e0e0e0; /* Light grey background like the reference */
+}
+
+.left-section {
+  width: 750px; /* Or use flex-basis for responsiveness */
+  padding: 20px; /* Adjusted padding */
+  /* color: white; /* If your text needs to be white based on a dark background not shown */
+}
+
+.left-section-content .heading {
+    font-size: 1.5em; /* Adjust as needed */
+    margin-bottom: 15px;
+}
+
+.left-section-content .cont1 {
+    font-size: 1em; /* Adjust as needed */
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.left-section-content .btn {
+    background-color: #8A2BE2; /* Example purple, adjust to match */
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.left-section-content .btn:hover {
+    background-color: #701ebd; /* Darker purple */
+}
+
+.left-section-content .btn span {
+    margin-right: 8px;
+}
+
+
+.right-section {
+  position: relative;
+  /* width: 700px; Ensure this is appropriate for your layout or use flex properties */
+  flex-basis: 55%; /* Example: allow right section to take more space */
+  width: 700px; /* Max width for the map */
+  height: 100%; /* Or set a specific height if needed for the mask aspect ratio to work off */
+}
+
+.australia-mask {
+  width: 100%;
+  aspect-ratio: 1.1; /* Adjust based on your mask (fm.png) aspect ratio */
+  -webkit-mask-image: url('/fm.png'); /* This is the Australia shape */
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: contain; /* Or 'cover' if you want the mask to always fill */
+  -webkit-mask-position: center;
+  mask-image: url('/fm.png');
+  mask-repeat: no-repeat;
+  mask-size: contain; /* Or 'cover' */
+  mask-position: center;
+  overflow: hidden; /* Important: though mask should handle it */
+  position: relative; /* To ensure it's a containing block for the wrapper if ever needed */
+}
+
+.image-collage-wrapper {
+  position: relative; 
+  width: 100%;
+  height: 100%;
+  object-fit: fit;
+  
+  /* You could add a background color here if you want to see the shape
+     or if images might not cover everything perfectly.
+     background-color: rgba(0,0,0,0.1); */
+}
+
+.collage-image {
+  position: absolute;
+  /* object-fit: cover; Scales the image to maintain its aspect ratio while filling the element's entire content box */
+  /* Add any default styles for images, like a subtle border or shadow if desired */
+  /* box-shadow: 0 0 5px rgba(0,0,0,0.5); */ /* Example shadow */
+  background-color: #333; /* Fallback color if image is loading/missing */
+}
+
+/*
+  SPECIFIC POSITIONS FOR EACH IMAGE:
+  These are illustrative and WILL require careful tuning based on your
+  fm.png mask and the desired look from the reference image.
+  Values are percentages of the .image-collage-wrapper dimensions.
+*/
+
+
+/*Image 1: Large, top-left area (e.g., WA, NT parts) */
+ .img-pos-1 {
+  top: 0%;
+  left: 0%;
+  width: 40%;  
+   height: 70%;
+   /* z-index: 1; If you need to control stacking order */
+   object-fit: cover;
+}
+
+
+.img-pos-2 {
+  top: 0%;
+  left: 40.50%;   
+  width: 22%; 
+  height: 39.50%; 
+  object-fit: cover;
+}
+
+
+.img-pos-3 {
+  top: 0%;   
+  left: 63%;
+  width: 40%;
+  height: 50%;
+  object-fit: cover;
+}
+
+
+.img-pos-4 {
+  border: 3px solid white;
+  top: 40%;
+  left: 40.50%;
+  width: 30%;
+  height: 41%;
+  z-index: 2; 
+  object-fit: cover;
+}
+
+
+.img-pos-5 {
+  top: 50.5%;
+  left: 70.9%;
+  width: 50%;
+  height: 13%;
+  object-fit: cover;
+}
+
+.img-pos-6 {
+  top: 64%;
+  left: 71%;
+  width: 50%;
+  height: 21%;
+  object-fit: cover;
+}
+
+.img-pos-7 {
+  top: 89%;  
+  left: 75%;  
+  width: 11%;  
+  height: 25%; 
+  z-index: 3;
+  object-fit: fit;
+} 
