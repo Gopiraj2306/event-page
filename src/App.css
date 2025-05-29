@@ -69,6 +69,9 @@
   width: 700px;
  
 }
+.rotation-scene-map:hover{
+  animation: rotate360 3s ease-in-out forwards;
+}
 
 .australia-mask {
   width: 100%;
@@ -95,6 +98,7 @@
   transform-style: preserve-3d;
 }
 
+
 .collage-image {
   position: absolute;
   object-fit: cover;
@@ -103,16 +107,10 @@
 
 .collage-image:hover {
   transform: 3s;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
 }
 /* Define CSS custom properties for each image's final transform */
-.img-pos-1 {
-  top: 0;
-  left: 0.30%;
-  width: 40%;
-  height: 70%;
-  /* --final-transform: translateZ(50px) translateX(-20px) translateY(-10px) rotateY(5deg) rotateX(3deg); */
-}
+
  .img-pos-1 {
   top: 0;
   left: 0.30%;
@@ -121,12 +119,18 @@
    /* z-index: 1; If you need to control stacking order */
    object-fit: cover;
 }
+.img-pos-1:hover{
+   animation: rotate360 3s ease-in-out forwards;
+}
 .img-pos-2 {
   top: 0%;
   left: 40.70%;
   width: 22%;
   height: 40.5%;
   /* --final-transform: translateZ(70px) translateX(15px) translateY(-5px) rotateY(-3deg) rotateX(2deg); */
+}
+.img-pos-2:hover{
+   animation: rotate360 3s ease-in-out forwards;
 }
 
 .img-pos-3 {
@@ -136,7 +140,9 @@
   height: 50%;
   /* --final-transform: translateZ(60px) translateX(10px) translateY(20px) rotateY(4deg) rotateX(-5deg); */
 }
-
+.img-pos-3:hover{
+   animation: rotate360 3s ease-in-out forwards;
+}
 .img-pos-4 {
   border-top: 2px solid white;
   border-right: 2px solid white;
@@ -148,7 +154,9 @@
   z-index: 2;
   /* --final-transform: translateZ(90px) translateX(-10px) translateY(15px) rotateY(-2deg) rotateX(4deg); */
 }
-
+.img-pos-4:hover{
+   animation: rotate360 3s ease-in-out forwards;
+}
 .img-pos-5 {
   top: 50.40%;
   left: 70.9%;
@@ -156,7 +164,9 @@
   height: 13%;
   /* --final-transform: translateZ(40px) translateX(20px) translateY(-15px) rotateY(3deg) rotateX(-3deg); */
 }
-
+.img-pos-5:hover{
+   animation: rotate360 3s ease-in-out forwards;
+}
 .img-pos-6 {
   top: 63.70%;
   left: 71%;
@@ -164,7 +174,9 @@
   height: 27%;
   /* --final-transform: translateZ(80px) translateX(-5px) translateY(10px) rotateY(-5deg) rotateX(2deg); */
 }
-
+.img-pos-6:hover{
+   animation: rotate360 3s ease-in-out forwards;
+}
 .img-pos-7 {
   top: 89%;
   left: 75%;
@@ -174,7 +186,9 @@
   object-fit: contain;
   /* --final-transform: translateZ(100px) translateX(5px) translateY(25px) rotateY(2deg) rotateX(-4deg); */
 }
-
+.img-pos-7:hover{
+   animation: rotate360 3s ease-in-out forwards;
+}
 /* Base styles for collage images */
 .collage-image {
   position: absolute;
@@ -190,13 +204,20 @@
 }
 
 /* Ensure the transform is applied after animation */
-.australia-mask.animate-map .img-pos-1 {   transform: translateZ(70px) translateX(-15px) translateY(-5px); }
-.australia-mask.animate-map .img-pos-2 {  transform: translateZ(70px) translateX(-15px) translateY(-10px); }
-.australia-mask.animate-map .img-pos-3 {  transform: translateZ(70px) translateX(-15px) translateY(-15px); }
-.australia-mask.animate-map .img-pos-4 {  transform: translateZ(70px) translateX(-15px) translateY(-20px); }
-.australia-mask.animate-map .img-pos-5 {  transform: translateZ(70px) translateX(-15px) translateY(-25px); }
-.australia-mask.animate-map .img-pos-6 { transform: translateZ(70px) translateX(-15px) translateY(-30px); }
-.australia-mask.animate-map .img-pos-7 { transform: translateZ(70px) translateX(-15px) translateY(-35px); }
+.australia-mask.animate-map .img-pos-1 
+.australia-mask:hover .img-pos-1{   transform: translateZ(70px) translateX(-15px) translateY(-5px); }
+.australia-mask.animate-map .img-pos-2 
+.australia-mask:hover .img-pos-2{  transform: translateZ(70px) translateX(-15px) translateY(-10px); }
+.australia-mask.animate-map .img-pos-3
+.australia-mask:hover .img-pos-3 {  transform: translateZ(70px) translateX(-15px) translateY(-15px); }
+.australia-mask.animate-map .img-pos-4
+.australia-mask:hover .img-pos-4 {  transform: translateZ(70px) translateX(-15px) translateY(-20px); }
+.australia-mask.animate-map .img-pos-5
+.australia-mask.hover .img-pos-5 {  transform: translateZ(70px) translateX(-15px) translateY(-25px); }
+.australia-mask.animate-map .img-pos-6
+.australia-mask:hover .img-pos-6 { transform: translateZ(70px) translateX(-15px) translateY(-30px); }
+.australia-mask.animate-map .img-pos-7
+.australia-mask:hover .img-pos-7 { transform: translateZ(70px) translateX(-15px) translateY(-35px); }
 
 /* Animation keyframes remain the same */
 @keyframes popOut1 {
