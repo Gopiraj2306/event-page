@@ -1,32 +1,79 @@
-/* #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
 .overall-content {
   display: flex;
-  justify-content: center;
   align-items: center;
-  color: black;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+  /* box-sizing: border-box; */
+  background-color: white;
+  /* flex-wrap: wrap; */
 }
 
 .left-section {
-  width: 400px;
-  padding: 50px 50px;
+  flex: center;
+  justify-content: center;
+  align-items: center;
+ width: 700px;
+  padding: 20px;
+}
+
+.left-section-content .heading {
+  font-size: 0.95em;
+  font-weight: 700;
+  color: #000045;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.left-section-content .cont1 {
+  font-size: 0.95em;
+  line-height: 1.6;
+  color: #6a6a6a;
+  text-align: center;
+  max-width: 400px;
+  margin: 0 auto 20px auto;
+}
+
+.left-section-content .cont1 strong {
+  color: #000045;
+  font-weight: 700;
+}
+
+.left-section-content .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #12004d;
+  color: #fff;
+  border: none;
+  padding: 12px 28px;
+  font-size: 0.9em;
+  font-weight: 600;
+  border-radius: 30px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: background-color 0.3s ease;
+  gap: 10px;
+}
+
+.left-section-content .btn:hover {
+  background-color: #0a0030;
 }
 
 .right-section {
-  position: relative;
+  flex: center;
+  justify-content: center;
+  align-items: center;
   width: 700px;
-  height: auto;
+ 
 }
 
 .australia-mask {
   width: 100%;
-  aspect-ratio: 1.1; 
-  -webkit-mask-image: url('/fm.png'); 
+  aspect-ratio: 1.1;
+  -webkit-mask-image: url('/fm.png');
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-size: contain;
   -webkit-mask-position: center;
@@ -37,150 +84,35 @@
   overflow: hidden;
 }
 
-.image-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2px;
-  width: 100%;
-  height: 100%;
-}
-
-.image-grid img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-} */
-/* Keep your existing .overall-content, .left-section styles */
-.overall-content {
-  display: flex;
-  /* justify-content: center; /* You might want space-around or space-between */
-  justify-content: center;
-  align-items: center;
-  color: black; /* Assuming your page background is light as in the example */
-  min-height: 100vh;
-  
-  padding: 20px;
-  box-sizing: border-box;
-  background-color: white; /* Light grey background like the reference */
-}
-
-.left-section {
-  width: 750px; /* Or use flex-basis for responsiveness */
-  padding: 20px; /* Adjusted padding */
-  /* color: white; /* If your text needs to be white based on a dark background not shown */
-}
-
-.left-section-content .heading {
-    font-size: 0.95em;
-    font-weight: 700;
-    color: #000045;
-    text-transform: uppercase;
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-.left-section-content .cont1 {
-    font-size: 0.95em;
-    line-height: 1.6;
-    color: #6a6a6a;
-    text-align: center;
-    max-width: 400px;
-    margin: 0 auto 20px auto;
-}
-
-.left-section-content .cont1 strong {
-    color: #000045;
-    font-weight: 700;
-}
-
-.left-section-content .btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #12004d;
-    color: #fff;
-    border: none;
-    padding: 12px 28px;
-    font-size: 0.9em;
-    font-weight: 600;
-    border-radius: 30px;
-    cursor: pointer;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    transition: background-color 0.3s ease;
-    text-align: center;
-    gap: 10px;
-}
-
-.left-section-content .btn:hover {
-    background-color: #0a0030;
-}
-
-.left-section-content .btn::before {
-    content: '→';
-    font-size: 1em;
-    background-color: white;
-    color: #12004d;
-    border-radius: 50%;
-    width: 28px;
-    height: 28px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-}
-
-
-.right-section {
-  position: relative;
-  /* width: 700px; Ensure this is appropriate for your layout or use flex properties */
-  flex-basis: 55%; /* Example: allow right section to take more space */
-  width: 700px; /* Max width for the map */
-  height: 100%; /* Or set a specific height if needed for the mask aspect ratio to work off */
-}
-
-.australia-mask {
-  width: 100%;
-  aspect-ratio: 1.1; /* Adjust based on your mask (fm.png) aspect ratio */
-  -webkit-mask-image: url('/fm.png'); /* This is the Australia shape */
-  -webkit-mask-repeat: no-repeat;
-  -webkit-mask-size: contain; /* Or 'cover' if you want the mask to always fill */
-  -webkit-mask-position: center;
-  mask-image: url('/fm.png');
-  mask-repeat: no-repeat;
-  mask-size: contain; /* Or 'cover' */
-  mask-position: center;
-  overflow: hidden; /* Important: though mask should handle it */
-  position: relative; /* To ensure it's a containing block for the wrapper if ever needed */
+.australia-mask.animate-map {
+  animation: rotate360 3s ease-in-out forwards;
 }
 
 .image-collage-wrapper {
-  position: relative; 
+  position: relative;
   width: 100%;
   height: 100%;
-  object-fit: fit;
-  
-  /* You could add a background color here if you want to see the shape
-     or if images might not cover everything perfectly.
-     background-color: rgba(0,0,0,0.1); */
+  transform-style: preserve-3d;
 }
 
 .collage-image {
   position: absolute;
-  /* object-fit: cover; Scales the image to maintain its aspect ratio while filling the element's entire content box */
-  /* Add any default styles for images, like a subtle border or shadow if desired */
-  /* box-shadow: 0 0 5px rgba(0,0,0,0.5); */ /* Example shadow */
-  background-color: #333; /* Fallback color if image is loading/missing */
+  object-fit: cover;
+  transition: transform 3s ease;
 }
 
-/*
-  SPECIFIC POSITIONS FOR EACH IMAGE:
-  These are illustrative and WILL require careful tuning based on your
-  fm.png mask and the desired look from the reference image.
-  Values are percentages of the .image-collage-wrapper dimensions.
-*/
-
-
-/*Image 1: Large, top-left area (e.g., WA, NT parts) */
+.collage-image:hover {
+  transform: 3s;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+/* Define CSS custom properties for each image's final transform */
+.img-pos-1 {
+  top: 0;
+  left: 0.30%;
+  width: 40%;
+  height: 70%;
+  /* --final-transform: translateZ(50px) translateX(-20px) translateY(-10px) rotateY(5deg) rotateX(3deg); */
+}
  .img-pos-1 {
   top: 0;
   left: 0.30%;
@@ -189,25 +121,21 @@
    /* z-index: 1; If you need to control stacking order */
    object-fit: cover;
 }
-
-
 .img-pos-2 {
   top: 0%;
-  left: 40.70%;   
-  width: 22%; 
-  height: 40.5%; 
-  object-fit: cover;
+  left: 40.70%;
+  width: 22%;
+  height: 40.5%;
+  /* --final-transform: translateZ(70px) translateX(15px) translateY(-5px) rotateY(-3deg) rotateX(2deg); */
 }
 
-
 .img-pos-3 {
-  top: 0%;   
+  top: 0%;
   left: 63%;
   width: 40%;
   height: 50%;
-  object-fit: cover;
+  /* --final-transform: translateZ(60px) translateX(10px) translateY(20px) rotateY(4deg) rotateX(-5deg); */
 }
-
 
 .img-pos-4 {
   border-top: 2px solid white;
@@ -217,17 +145,16 @@
   left: 40.50%;
   width: 30%;
   height: 41%;
-  z-index: 2; 
-  object-fit: cover;
+  z-index: 2;
+  /* --final-transform: translateZ(90px) translateX(-10px) translateY(15px) rotateY(-2deg) rotateX(4deg); */
 }
-
 
 .img-pos-5 {
   top: 50.40%;
   left: 70.9%;
   width: 26%;
   height: 13%;
-  object-fit: cover;
+  /* --final-transform: translateZ(40px) translateX(20px) translateY(-15px) rotateY(3deg) rotateX(-3deg); */
 }
 
 .img-pos-6 {
@@ -235,14 +162,92 @@
   left: 71%;
   width: 22%;
   height: 27%;
-  object-fit: cover;
+  /* --final-transform: translateZ(80px) translateX(-5px) translateY(10px) rotateY(-5deg) rotateX(2deg); */
 }
 
 .img-pos-7 {
-  top: 89%;  
-  left: 75%;  
-  width: 13%;  
-  height: 11%; 
+  top: 89%;
+  left: 75%;
+  width: 13%;
+  height: 11%;
   z-index: 3;
-  object-fit: fit;
-} 
+  object-fit: contain;
+  /* --final-transform: translateZ(100px) translateX(5px) translateY(25px) rotateY(2deg) rotateX(-4deg); */
+}
+
+/* Base styles for collage images */
+.collage-image {
+  position: absolute;
+  object-fit: cover;
+  /* transition: transform 0.3s ease, box-shadow 0.3s ease; */
+ animation: rotate360 3s ease-in-out forwards; /* Default to the final animated transform */
+}
+
+/* Hover effect: Add scale and shadow without overwriting the base transform */
+.collage-image:hover {
+   animation: rotate360 3s ease-in-out forwards; /* Combine with the final transform */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Ensure the transform is applied after animation */
+.australia-mask.animate-map .img-pos-1 {   transform: translateZ(70px) translateX(-15px) translateY(-5px); }
+.australia-mask.animate-map .img-pos-2 {  transform: translateZ(70px) translateX(-15px) translateY(-10px); }
+.australia-mask.animate-map .img-pos-3 {  transform: translateZ(70px) translateX(-15px) translateY(-15px); }
+.australia-mask.animate-map .img-pos-4 {  transform: translateZ(70px) translateX(-15px) translateY(-20px); }
+.australia-mask.animate-map .img-pos-5 {  transform: translateZ(70px) translateX(-15px) translateY(-25px); }
+.australia-mask.animate-map .img-pos-6 { transform: translateZ(70px) translateX(-15px) translateY(-30px); }
+.australia-mask.animate-map .img-pos-7 { transform: translateZ(70px) translateX(-15px) translateY(-35px); }
+
+/* Animation keyframes remain the same */
+@keyframes popOut1 {
+  0% { transform: translateZ(0) translateX(0) translateY(0); }
+  100% { transform: translateZ(50px) translateX(-20px) translateY(-10px) ; }
+}
+
+@keyframes popOut2 {
+  0% { transform: translateZ(0) translateX(0) translateY(0); }
+  100% { transform: translateZ(70px) translateX(15px) translateY(-5px) ; }
+}
+
+@keyframes popOut3 {
+  0% { transform: translateZ(0) translateX(0) translateY(0); }
+  100% { transform: translateZ(60px) translateX(10px) translateY(20px) ; }
+}
+
+@keyframes popOut4 {
+  0% { transform: translateZ(0) translateX(0) translateY(0); }
+  100% { transform: translateZ(0) translateX(-10px) translateY(15px) ; }
+}
+
+@keyframes popOut5 {
+  0% { transform: translateZ(0) translateX(0) translateY(0); }
+  100% { transform: translateZ(0) translateX(20px) translateY(-15px); }
+}
+
+@keyframes popOut6 {
+  0% { transform: translateZ(0) translateX(0) translateY(0); }
+  100% { transform: translateZ(0) translateX(-5px) translateY(10px) }
+}
+
+@keyframes popOut7 {
+  0% { transform: translateZ(0) translateX(0) translateY(0); }
+  100% { transform: translateZ(0) translateX(5px) translateY(25px)  }
+}
+
+@keyframes rotate360 {
+  0% { transform: rotateY(0deg); }
+  100% { transform: rotateY(360deg); }
+}
+
+@media (max-width: 768px) {
+  .overall-content {
+    flex-direction: column;
+  }
+  .left-section, .right-section {
+    width: 100%;
+    max-width: 100%;
+  }
+  .australia-mask {
+    max-height: 400px;
+  }
+}
