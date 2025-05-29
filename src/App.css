@@ -61,7 +61,7 @@
   
   padding: 20px;
   box-sizing: border-box;
-  background-color: #e0e0e0; /* Light grey background like the reference */
+  background-color: white; /* Light grey background like the reference */
 }
 
 .left-section {
@@ -71,33 +71,62 @@
 }
 
 .left-section-content .heading {
-    font-size: 1.5em; /* Adjust as needed */
-    margin-bottom: 15px;
+    font-size: 0.95em;
+    font-weight: 700;
+    color: #000045;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 10px;
 }
 
 .left-section-content .cont1 {
-    font-size: 1em; /* Adjust as needed */
+    font-size: 0.95em;
     line-height: 1.6;
-    margin-bottom: 20px;
+    color: #6a6a6a;
+    text-align: center;
+    max-width: 400px;
+    margin: 0 auto 20px auto;
+}
+
+.left-section-content .cont1 strong {
+    color: #000045;
+    font-weight: 700;
 }
 
 .left-section-content .btn {
-    background-color: #8A2BE2; /* Example purple, adjust to match */
-    color: white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #12004d;
+    color: #fff;
     border: none;
-    padding: 12px 25px;
-    font-size: 1em;
+    padding: 12px 28px;
+    font-size: 0.9em;
+    font-weight: 600;
+    border-radius: 30px;
     cursor: pointer;
-    border-radius: 5px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
     transition: background-color 0.3s ease;
+    text-align: center;
+    gap: 10px;
 }
 
 .left-section-content .btn:hover {
-    background-color: #701ebd; /* Darker purple */
+    background-color: #0a0030;
 }
 
-.left-section-content .btn span {
-    margin-right: 8px;
+.left-section-content .btn::before {
+    content: '→';
+    font-size: 1em;
+    background-color: white;
+    color: #12004d;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
@@ -166,7 +195,7 @@
   top: 0%;
   left: 40.50%;   
   width: 22%; 
-  height: 39.50%; 
+  height: 40.5%; 
   object-fit: cover;
 }
 
@@ -181,7 +210,9 @@
 
 
 .img-pos-4 {
-  border: 3px solid white;
+  border-top: 3px solid white;
+  border-right: 3px solid white;
+  border-left: 1px solid white;
   top: 40%;
   left: 40.50%;
   width: 30%;
@@ -194,7 +225,7 @@
 .img-pos-5 {
   top: 50.5%;
   left: 70.9%;
-  width: 50%;
+  width: 26%;
   height: 13%;
   object-fit: cover;
 }
@@ -202,7 +233,7 @@
 .img-pos-6 {
   top: 64%;
   left: 71%;
-  width: 50%;
+  width: 22%;
   height: 21%;
   object-fit: cover;
 }
@@ -210,8 +241,8 @@
 .img-pos-7 {
   top: 89%;  
   left: 75%;  
-  width: 11%;  
-  height: 25%; 
+  width: 13%;  
+  height: 11%; 
   z-index: 3;
   object-fit: fit;
 } 
